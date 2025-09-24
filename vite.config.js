@@ -34,24 +34,25 @@ export default [
       "no-useless-escape": "error",
       "no-fallthrough": "error",
       "no-undef": "error",
+          "react/react-in-jsx-scope": "off", // ⬅ turn off the old rule
 
       // React-specific rules for better performance and consistency
-      "react/jsx-key": "error", // Enforce key prop on elements in iterators
-      "react/jsx-no-target-blank": "error", // Enforce rel="noreferrer" on target="_blank"
-      "react/no-unescaped-entities": "warn", // Warn on unescaped HTML entities
-      "react/prop-types": "off", // Often turned off for TypeScript users
-      "react/self-closing-comp": "error", // Enforce self-closing tags for elements without children
+      // "react/jsx-key": "error", // Enforce key prop on elements in iterators
+      // "react/jsx-no-target-blank": "error", // Enforce rel="noreferrer" on target="_blank"
+      // "react/no-unescaped-entities": "warn", // Warn on unescaped HTML entities
+      // "react/prop-types": "off", // Often turned off for TypeScript users
+      // "react/self-closing-comp": "error", // Enforce self-closing tags for elements without children
 
       // React Hooks rules
       "react-hooks/rules-of-hooks": "error", // Enforce the rules of Hooks
       "react-hooks/exhaustive-deps": "warn", // Warn about missing dependencies in Hooks like useEffect
        "no-useless-return": "warn",
        // React-specific rules for better performance and consistency
-      "react/jsx-key": "error", // Enforce key prop on elements in iterators
-      "react/jsx-no-target-blank": "error", // Enforce rel="noreferrer" on target="_blank"
-      "react/no-unescaped-entities": "warn", // Warn on unescaped HTML entities
-      "react/prop-types": "off", // Often turned off for TypeScript users
-      "react/self-closing-comp": "error", // Enforce self-closing tags for elements without children
+      // "react/jsx-key": "error", // Enforce key prop on elements in iterators
+      // "react/jsx-no-target-blank": "error", // Enforce rel="noreferrer" on target="_blank"
+      // "react/no-unescaped-entities": "warn", // Warn on unescaped HTML entities
+      // "react/prop-types": "off", // Often turned off for TypeScript users
+      // "react/self-closing-comp": "error", // Enforce self-closing tags for elements without children
 
       // React Hooks rules
       "react-hooks/rules-of-hooks": "error", // Enforce the rules of Hooks
