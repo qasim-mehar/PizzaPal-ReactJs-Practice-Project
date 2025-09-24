@@ -1,5 +1,6 @@
-import { React } from "react";
+// import { React } from "react";
 function CartOverview() {
+
   return (
     <div>
       <p>
