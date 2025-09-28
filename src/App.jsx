@@ -12,7 +12,7 @@ import Cart from "./features/cart/Cart";
 const router=createBrowserRouter([
   //WE USE THIS PERTICULAR IMPERITIVE WAY TO DECLARE ROUTES ONLY BECAUSE HERE WE CAN LOAD DATA UNLICE OLD BROWSERROUTE> ROUTES WAY.
   {
-    element:<AppLayout/>,
+    element:<AppLayout/>, //SINCE, IT DOESN'T HAVE A PATH SO IN REACT WE CALL IT A LAYOUT ROUTE
     children:[
       {
     path:"/",

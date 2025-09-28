@@ -23,6 +23,11 @@ export default [
       react,
       "react-hooks": reactHooks,
     },
+    settings: {
+      react: {
+        version: "detect", // 👈 This removes the warning
+      },
+    },
     rules: {
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
@@ -37,7 +42,7 @@ export default [
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "no-useless-return": "warn",
-        "react/no-unescaped-entities": "off",
+      "react/no-unescaped-entities": "off",
     },
   },
 ];
