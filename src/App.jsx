@@ -23,7 +23,7 @@ const router=createBrowserRouter([
   {
     path:"/menu",
     element:<Menu/>,
-    loader: menuLoader,
+    loader: menuLoader, //WE PERTICULARLY USE THIS KEY VALUE TO HANDLE ERROR WHILE FETCHING DATA
     errorElement:<Error/>,
   },
   {
