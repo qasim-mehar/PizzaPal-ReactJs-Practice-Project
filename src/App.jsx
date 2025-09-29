@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
 
 import Home from "./ui/Home"
+import Error from "./ui/Error"
 import Menu ,{loader as menuLoader} from "./features/menu/Menu"
 // import Cart from "./features/cart/CartOverview";
 import CreateOrder from "./features/order/CreateOrder"
@@ -13,6 +14,7 @@ const router=createBrowserRouter([
   //WE USE THIS PERTICULAR IMPERITIVE WAY TO DECLARE ROUTES ONLY BECAUSE HERE WE CAN LOAD DATA UNLICE OLD BROWSERROUTE> ROUTES WAY.
   {
     element:<AppLayout/>, //SINCE, IT DOESN'T HAVE A PATH SO IN REACT WE CALL IT A LAYOUT ROUTE
+    errorElement:<Error/>, //II WILL AUTONOMUSLY HANDLE ERRORS IF WE TRY WRONG URL OR UNABLE TO FETCH DATA ETC.
     children:[
       {
     path:"/",
@@ -21,7 +23,8 @@ const router=createBrowserRouter([
   {
     path:"/menu",
     element:<Menu/>,
-    loader: menuLoader
+    loader: menuLoader,
+    errorElement:<Error/>,
   },
   {
     path:"/cart",
