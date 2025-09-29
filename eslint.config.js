@@ -43,6 +43,7 @@ export default [
       "react-hooks/exhaustive-deps": "warn",
       "no-useless-return": "warn",
       "react/no-unescaped-entities": "off",
+      "react/prop-types": "off",
     },
   },
 ];
