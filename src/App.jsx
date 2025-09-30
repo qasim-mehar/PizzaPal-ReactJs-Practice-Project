@@ -6,7 +6,7 @@ import Error from "./ui/Error"
 import Menu ,{loader as menuLoader} from "./features/menu/Menu"
 // import Cart from "./features/cart/CartOverview";
 import CreateOrder from "./features/order/CreateOrder"
-import Order from "./features/order/Order"
+import Order, {loader as orderLoader} from "./features/order/Order"
 import AppLayout from "./ui/AppLayout";
 import Cart from "./features/cart/Cart";
 
@@ -35,8 +35,11 @@ const router=createBrowserRouter([
     element: <CreateOrder/>
   },
   {
-   path: "/order/:orderId",
-   element: <Order/>
+   path: "/order/:orderId", //orderId WILL BE THE ACTUAL NAME OF OUR PARAM
+   element: <Order/>,
+   loader: orderLoader, //WHEN WE PROVIDE THIS LOADER ON CERTAIN ROUTE NAVIGATION WE ALSO PROVIDE THE LOADED DATA WHICH WE CAN ACCESS USING useRouteData HOOK
+   errorElement: <Error/>
+
   }
     ]
   }
