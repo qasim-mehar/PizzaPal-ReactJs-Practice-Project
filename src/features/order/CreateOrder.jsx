@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import { Form, redirect, useNavigation } from "react-router-dom";
+import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 import { createOrder } from "../../services/APIResturant";
 // // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -34,6 +34,7 @@ const fakeCart = [
 function CreateOrder() {
   // const [withPriority, setWithPriority] = useState(false);
   const cart = fakeCart;
+  const fromErrors=useActionData(); //THIS HOOK PROVIDE US THE RETURN DATA FROM ACTION FUNCTION VIA PATHS IN APP.JSX
   const navigate= useNavigation();
   const isSubmitting= navigate.state==="submitting";
   return (
@@ -52,7 +53,7 @@ function CreateOrder() {
             <input type="tel" name="phone" required />
           </div>
         </div>
-
+        <div>{fromErrors?.phone && <p>{fromErrors.phone}</p>}</div>
         <div>
           <label>Address</label>
           <div>
@@ -87,6 +88,12 @@ export async function action({request}) {
     cart:JSON.parse(data.cart),
     priority: data.priority==="on",
    }
+   const errors={};
+   if(!isValidPhone(order.phone)){
+    errors.phone="Please enter your correct phone number"
+   }
+   if(Object.keys(errors).length>0) return errors; //IF ANY ERROR ACCURS, RETURN THOSE ERRORS.
+
    const newOrder= await createOrder(order);
    return redirect(`/order/${newOrder.id}`);
 
