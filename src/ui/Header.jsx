@@ -6,7 +6,7 @@ function Header() {
 
   return (
     <header>
-      <Link to="/">PizzaPal Co.</Link>
+      <Link className="text-3xl font-bold" to="/">PizzaPal Co.</Link>
 
     </header>
   );
